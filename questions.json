@@ -1,0 +1,34 @@
+{
+    "questions": [
+        {
+            "question": "Qual é o principal benefício oferecido pela empresa?",
+            "options": [
+                "Vale-refeição",
+                "Assistência médica",
+                "Seguro de vida",
+                "Transporte"
+            ],
+            "answer": "Assistência médica"
+        },
+        {
+            "question": "Qual é a política da empresa em relação ao trabalho remoto?",
+            "options": [
+                "Trabalho remoto não é permitido",
+                "Trabalho remoto é permitido apenas uma vez por mês",
+                "Trabalho remoto é permitido conforme a necessidade e acordo com o gerente",
+                "Trabalho remoto é permitido todos os dias"
+            ],
+            "answer": "Trabalho remoto é permitido conforme a necessidade e acordo com o gerente"
+        },
+        {
+            "question": "Como a empresa descreve sua cultura organizacional?",
+            "options": [
+                "Hierárquica e formal",
+                "Inovadora e colaborativa",
+                "Competitiva e individualista",
+                "Tradicional e rígida"
+            ],
+            "answer": "Inovadora e colaborativa"
+        }
+    ]
+}
