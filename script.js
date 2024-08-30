@@ -54,9 +54,9 @@ function selectAnswer(answer) {
     const currentQuestion = questions[currentQuestionIndex];
 
     if (answer === currentQuestion.answer) {
-        alert('Correto!');
+        alert('Correct!');
     } else {
-        alert('Errado!');
+        alert('Wrong!');
     }
 
 
@@ -65,5 +65,5 @@ function selectAnswer(answer) {
 
 
 function showResults() {
-    alert('Quiz completo');
+    alert('Quiz completed!'); // Exibe uma mensagem de conclusão do quiz
 }
