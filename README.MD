@@ -84,24 +84,34 @@ O projeto inclui um servidor básico em Node.js para servir os arquivos necessá
 {
     "questions": [
         {
-            "question": "Qual é a capital da França?",
+            "question": "Qual é o principal benefício oferecido pela empresa?",
             "options": [
-                "Paris",
-                "Londres",
-                "Berlim",
-                "Madri"
+                "Vale-refeição",
+                "Assistência médica",
+                "Seguro de vida",
+                "Transporte"
             ],
-            "answer": "Paris"
+            "answer": "Assistência médica"
         },
         {
-            "question": "Qual planeta é conhecido como o Planeta Vermelho?",
+            "question": "Qual é a política da empresa em relação ao trabalho remoto?",
             "options": [
-                "Terra",
-                "Marte",
-                "Júpiter",
-                "Vênus"
+                "Trabalho remoto não é permitido",
+                "Trabalho remoto é permitido apenas uma vez por mês",
+                "Trabalho remoto é permitido conforme a necessidade e acordo com o gerente",
+                "Trabalho remoto é permitido todos os dias"
             ],
-            "answer": "Marte"
+            "answer": "Trabalho remoto é permitido conforme a necessidade e acordo com o gerente"
+        },
+        {
+            "question": "Como a empresa descreve sua cultura organizacional?",
+            "options": [
+                "Hierárquica e formal",
+                "Inovadora e colaborativa",
+                "Competitiva e individualista",
+                "Tradicional e rígida"
+            ],
+            "answer": "Inovadora e colaborativa"
         }
     ]
 }
