@@ -1,45 +1,43 @@
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/bootstrap.min.css">
-    <link rel="stylesheet" href="./css/style.css">
-    <script type="text/javascript" src="./js/bootstrap.min.js"></script>
-    <title>Quiz Project</title>
+    <title>Quizzer</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+        }
+
+        .bg-custom {
+            background: linear-gradient(to bottom, #4364f7, #6fb1fc);
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .logo {
+            font-size: 4rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+    </style>
 </head>
 
 <body>
-    <div style="border:solid 1px" class="container">
-        <div class="row justify-content-center">
-            <div class="col-6 col-sm-3">
-                <img src="./images/Quizzer.svg" alt="quizzer app logo">
+    <div class="bg-custom">
+        <div class="text-center">
+            <h1 class="logo">Quizzer</h1>
+        </div>
+    </div>
 
-            </div>
-            <div class="row justify-content-center">
-                <div class="col col-sm-6">
-                    <h2 id="question"></h2>
-
-                </div>
-
-                <div class="row justify-content-center">
-                    <div class="col col-sm-3">
-                        <ul id="options"><!-- As opções serão inseridas aqui dinamicamente --></ul>
-
-                    </div>
-                    <div class="row justify-content-center">
-                        <div class="col-6 col-sm-3">
-                            <button id="next-btn">Next</button>
-
-                        </div>
-                    </div>
-                    <div>
-                    </div>
-
-                </div>
-
-                <script src="./js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
