@@ -5,82 +5,132 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quizzer - Login</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f8f9fa;
-        }
 
-        .form-container {
-            max-width: 400px;
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-
-        .form-container h1 {
-            font-family: 'Pacifico', cursive;
-            margin-bottom: 20px;
-        }
-
-        .btn-primary {
-            background-color: #4f63d2;
-            border: none;
-        }
-
-        .google-btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 10px;
-            border-radius: 5px;
-            border: 1px solid #ddd;
-            margin-top: 10px;
-        }
-
-        .google-btn img {
-            margin-right: 10px;
-        }
-    </style>
+    <!-- Bootstrap 5.3.3 CSS -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
 </head>
+<style>
+    body,
+    html {
+        height: 100%;
+        margin: 0;
+    }
+
+    .bg-custom {
+        background: linear-gradient(to bottom, #4364f7, #304190);
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .logo {
+        font-size: 4rem;
+        font-weight: bold;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .modal-backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1050;
+    }
+
+    .modal-content-custom {
+        background-color: white;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+</style>
 
 <body>
 
-    <div class="form-container">
-        <img src="./images/Quizzer.svg" alt="">
-        <form>
-            <div class="mb-3">
-                <input type="text" class="form-control" id="nome" placeholder="Nome">
+
+    <!-- Modal (inicial) -->
+    <div class=" bg-custom modal-backdrop" id="initialModal">
+
+        <div class="text-center">
+            <img src="./images/Quizzer-white.svg" alt="">
+        </div>
+
+    </div>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <!-- Coluna da logo -->
+            <div class="col-12 text-center mb-4">
+                <img src="./images/Quizzer.svg" alt="Quizzer Logo" style="max-width: 150px;">
             </div>
-            <div class="mb-3">
-                <input type="email" class="form-control" id="email" placeholder="Email">
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-sm-8 col-md-6 col-lg-4">
+                <!-- Formulário -->
+                <form>
+                    <div class="row">
+                        <div class="col-12 mb-3">
+                            <label for="nome" class="form-label visually-hidden">Nome</label>
+                            <input type="text" class="form-control" id="nome" placeholder="Nome" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 mb-3">
+                            <label for="email" class="form-label visually-hidden">Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="Email" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 mb-3">
+                            <label for="senha" class="form-label visually-hidden">Senha</label>
+                            <input type="password" class="form-control" id="senha" placeholder="Senha" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 mb-3">
+                            <label for="confirmar-senha" class="form-label visually-hidden">Confirmação de Senha</label>
+                            <input type="password" class="form-control" id="confirmar-senha"
+                                placeholder="Confirmação de senha" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary w-100">Fazer login</button>
+                        </div>
+                    </div>
+                </form>
             </div>
-            <div class="mb-3">
-                <input type="password" class="form-control" id="senha" placeholder="Senha">
+        </div>
+
+        <!-- Login com Google -->
+        <div class="row justify-content-center mt-4">
+            <div class="col-sm-8 col-md-6 col-lg-4 text-center">
+                <p class="mb-3">Ou faça login com</p>
+                <button class="btn btn-outline-dark w-100 d-flex align-items-center justify-content-center">
+                    <img src="./images/icons8-google-logo.svg" width="20" class="me-2" alt="Google logo">
+                    Sign in with Google
+                </button>
             </div>
-            <div class="mb-3">
-                <input type="password" class="form-control" id="confirmar-senha" placeholder="Confirmação de senha">
-            </div>
-            <button type="submit" class="btn btn-primary w-100">Fazer login</button>
-        </form>
-        <div class="mt-3">
-            <p>Ou faça login com</p>
-            <button class="btn btn-outline-dark w-100">
-                <img src="./images/icons8-google-logo.svg" width="20" alt="Google logo">
-                Sign in with Google
-            </button>
         </div>
     </div>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap 5.3.3 JS -->
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Após 5 segundos, o modal desaparece
+        setTimeout(function () {
+            document.getElementById('initialModal').style.display = 'none';
+        }, 5000);
+    </script>
 </body>
 
 </html>
