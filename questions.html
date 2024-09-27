@@ -5,16 +5,94 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz Project</title>
-    <link rel="stylesheet" href="./css/bootstrap.min.css">
-    <link rel="stylesheet" href="./css/style-questions.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .progress-bar-container {
+            background-color: #e9ecef;
+            border-radius: 10px;
+            height: 6px;
+            width: 100%;
+            margin: 0 1rem;
+        }
 
+        .progress-bar {
+            background-color: #4364f7;
+            height: 6px;
+            width: 66%;
+            border-radius: 10px;
+        }
+
+        .option {
+            background-color: #fff;
+            border: 2px solid #6c757d;
+            border-radius: 10px;
+            padding: 10px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .option:hover {
+            background-color: #f1f3f5;
+        }
+
+        .option.correct {
+            background-color: #4364f7;
+            color: #fff;
+            border-color: #4364f7;
+        }
+
+        .nav-btn {
+            background-color: transparent;
+            border: none;
+            color: #4364f7;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .nav-btn:hover {
+            color: #304190;
+        }
+
+        .question-container {
+            text-align: center;
+        }
+
+        /* Estilos customizados para até 540px */
+        @media (max-width: 540px) {
+            .progress-bar-container {
+                margin: 0;
+            }
+
+            .quiz-header .quiz-progress {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .quiz-header .progress-bar-container {
+                margin: 10px 0;
+            }
+
+            .quiz-header .fas {
+                margin-top: 10px;
+                font-size: 1.2rem;
+            }
+
+            .quiz-footer {
+                display: flex;
+                justify-content: space-between;
+                padding: 0 1rem;
+            }
+        }
+    </style>
 </head>
 
 <body>
     <div id="quiz-container" class="container">
         <!-- Header Section -->
         <div class="row quiz-header">
-            <div class="col-12 col-md-8 d-flex justify-content-center align-items-center">
+            <div class="col-12 col-md-8 d-flex justify-content-between align-items-center">
                 <div class="quiz-progress">
                     <span>Apresent. - Onboarding</span>
                     <span>2/3</span>
@@ -29,14 +107,14 @@
         </div>
 
         <!-- Question Section -->
-        <div id="question-container" class="container-md">
+        <div id="question-container" class="row mt-4">
             <div class="col-12">
                 <h2 id="question" class="question-text">Qual é o principal objetivo do processo de onboarding em uma
                     empresa?</h2>
             </div>
             <div class="col-12">
                 <ul id="options" class="list-unstyled options-list">
-                    <li class="option">Integrar o novo colaborador à cultura e aos valores da empresa</li>
+                    <li class="option correct">Integrar o novo colaborador à cultura e aos valores da empresa</li>
                     <li class="option">Avaliar o desempenho do novo colaborador nas primeiras semanas</li>
                     <li class="option">Garantir que o novo colaborador conheça todos os produtos da empresa</li>
                     <li class="option">Fornecer ao novo colaborador um treinamento técnico intensivo</li>
@@ -55,6 +133,7 @@
         </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./js/script.js"></script>
 </body>
 
