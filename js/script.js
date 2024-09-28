@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
         .then(response => response.json())
         .then(data => {
             questions = data.questions;
+            updateProgress(); // Atualiza o progresso inicial
             showQuestion();
         });
 });
@@ -32,14 +33,16 @@ function showQuestion() {
         li.addEventListener('click', () => selectAnswer(option));
         optionsElement.appendChild(li);
     });
+
+    // Atualizar o progresso sempre que uma pergunta é exibida
+    updateProgress();
 }
 
 function selectAnswer(answer) {
     const currentQuestion = questions[currentQuestionIndex];
-    console.log(answer);
+
     // Verificar se a resposta está correta ou errada
     if (answer === currentQuestion.answer) {
-
         alert('Correto!');
     } else {
         alert('Errado!');
@@ -47,7 +50,6 @@ function selectAnswer(answer) {
 
     // Passar automaticamente para a próxima pergunta
     currentQuestionIndex++;
-    console.log(currentQuestionIndex);
 
     if (currentQuestionIndex < questions.length) {
         showQuestion();  // Exibir a próxima pergunta
@@ -60,9 +62,22 @@ function showResults() {
     alert('Quiz completo!'); // Exibe uma mensagem de conclusão do quiz
 }
 
+function updateProgress() {
+    // Pegar os elementos de progresso
+    const progressElement = document.querySelector('.quiz-progress span:last-child');
+    const progressBar = document.querySelector('.progress-bar');
+
+    // Atualizar o texto do progresso, ex: "2/3"
+    progressElement.textContent = `${currentQuestionIndex + 1}/${questions.length}`;
+
+    // Atualizar a barra de progresso
+    const progressPercentage = ((currentQuestionIndex + 1) / questions.length) * 100;
+    progressBar.style.width = `${progressPercentage}%`;
+}
+
+// Botões de navegação
 document.getElementById('next-btn').addEventListener('click', () => {
     currentQuestionIndex++;
-    console.log(currentQuestionIndex);
     if (currentQuestionIndex < questions.length) {
         showQuestion();
     } else {
@@ -71,11 +86,8 @@ document.getElementById('next-btn').addEventListener('click', () => {
 });
 
 document.getElementById('prev-btn').addEventListener('click', () => {
-    currentQuestionIndex--;
-    console.log(currentQuestionIndex);
-    if (currentQuestionIndex > -1) {
+    if (currentQuestionIndex > 0) {
+        currentQuestionIndex--;
         showQuestion();
-    } else {
-        showResults();
     }
 });
