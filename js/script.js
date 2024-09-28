@@ -1,4 +1,5 @@
 let currentQuestionIndex = 0;
+let correctAnswersCount = 0; // Variável para armazenar o número de acertos
 let questions = [];
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -43,6 +44,7 @@ function selectAnswer(answer) {
 
     // Verificar se a resposta está correta ou errada
     if (answer === currentQuestion.answer) {
+        correctAnswersCount++; // Incrementa o número de acertos
         alert('Correto!');
     } else {
         alert('Errado!');
@@ -59,7 +61,16 @@ function selectAnswer(answer) {
 }
 
 function showResults() {
-    alert('Quiz completo!'); // Exibe uma mensagem de conclusão do quiz
+    // Exibir a contagem de acertos no modal
+    document.querySelector('.congrats-text').innerHTML = `
+    <span style="font-size: 24px; font-weight: bold;">Parabéns!</span><br>
+    <span style="font-size: 16px;">Você acertou ${correctAnswersCount} de ${questions.length} perguntas.</span>
+`;
+
+
+
+    // Exibir o modal
+    document.getElementById('initialModal').style.display = 'flex'; // Exibe o modal ao final do quiz
 }
 
 function updateProgress() {
