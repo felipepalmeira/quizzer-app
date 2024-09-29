@@ -1,6 +1,10 @@
+Aqui está o README atualizado com o passo a passo para iniciar o servidor usando Eclipse ou IntelliJ:
+
+---
+
 # QUIZZER APP
 
-**QUIZZER APP** é uma aplicação que exibe um questionário básico usando perguntas definidas em um arquivo JSON. O aplicativo precisa ser executado em um servidor Java Tomcat para funcionar corretamente. 
+**QUIZZER APP** é uma aplicação que exibe um questionário básico usando perguntas definidas em um arquivo JSON. O aplicativo precisa ser executado em um servidor Java Tomcat para funcionar corretamente.
 
 ## Descrição
 
@@ -16,6 +20,7 @@ O QUIZZER APP carrega perguntas e respostas a partir de um arquivo JSON e aprese
 
 - **Java 8+**
 - **Apache Tomcat 9+**
+- **Eclipse IDE** ou **IntelliJ IDEA**
 
 ## Instalação
 
@@ -30,39 +35,63 @@ O QUIZZER APP carrega perguntas e respostas a partir de um arquivo JSON e aprese
 2. **Navegue até o Diretório do Projeto**
 
    ```sh
-   cd quizzer-app
+   cd quizz-app
    ```
 
-3. **Configure o Tomcat**
+## Configuração do Servidor Tomcat no Eclipse
 
-   - Certifique-se de que o Apache Tomcat está instalado corretamente e configurado.
-   - Copie os arquivos da aplicação para a pasta `webapps` do Tomcat (ou crie um arquivo `.war` e o implante no Tomcat).
+### Passo a Passo para Iniciar o Servidor no Eclipse:
 
-## Configuração do Servidor Tomcat
+1. **Baixe e Instale o Eclipse IDE for Java EE Developers**:
+   - Certifique-se de que o Eclipse está configurado com o plugin do Tomcat. Você pode baixá-lo [aqui](https://www.eclipse.org/downloads/).
 
-Siga os passos abaixo para rodar o QUIZZER APP no Tomcat:
+2. **Configure o Tomcat no Eclipse**:
+   - Abra o Eclipse e vá para `Window` > `Show View` > `Servers`.
+   - Na nova aba de `Servers`, clique com o botão direito e selecione `New` > `Server`.
+   - Escolha a versão do Tomcat instalada (por exemplo, Tomcat v9.0) e clique em `Next`.
+   - Selecione o diretório de instalação do Tomcat (onde o Tomcat foi instalado) e clique em `Finish`.
 
-1. **Inicie o Tomcat**
+3. **Importe o Projeto no Eclipse**:
+   - Vá para `File` > `Import` > `Maven` > `Existing Maven Projects`.
+   - Navegue até a pasta do projeto clonado (`quizzer-app`) e clique em `Finish`.
 
-   Acesse a pasta de instalação do Tomcat e inicie o servidor com o comando:
+4. **Adicione o Projeto ao Servidor**:
+   - Na aba de `Servers`, clique com o botão direito no servidor Tomcat que você configurou e selecione `Add and Remove...`.
+   - Selecione o projeto `quizzer-app` e clique em `Add` e depois `Finish`.
 
-   ```sh
-   catalina.sh run
-   ```
+5. **Inicie o Servidor**:
+   - Clique com o botão direito no servidor Tomcat na aba de `Servers` e selecione `Start`.
+   - O Tomcat será iniciado e você poderá acessar a aplicação em `http://localhost:8080/quizzer-app`.
 
-   Ou, no Windows:
+---
 
-   ```sh
-   catalina.bat run
-   ```
+## Configuração do Servidor Tomcat no IntelliJ IDEA
 
-2. **Implante a Aplicação**
+### Passo a Passo para Iniciar o Servidor no IntelliJ:
 
-   Certifique-se de que os arquivos do projeto estão na pasta `webapps` do Tomcat ou que o arquivo `.war` foi corretamente implantado.
+1. **Baixe e Instale o IntelliJ IDEA**:
+   - Se ainda não tem o IntelliJ, você pode baixá-lo [aqui](https://www.jetbrains.com/idea/download/).
 
-3. **Acesse a Aplicação**
+2. **Configure o Tomcat no IntelliJ**:
+   - Vá em `File` > `Project Structure` > `Facets`.
+   - No menu lateral, clique em `+` e selecione `Web`.
+   - Na aba `Run/Debug Configurations`, clique em `+` e escolha `Tomcat Server` > `Local`.
+   - No campo `Application Server`, clique em `Configure...` e adicione o diretório de instalação do Tomcat.
 
-   Abra o navegador e vá para `http://localhost:8080/quizzer-app` para acessar o QUIZZER APP.
+3. **Importe o Projeto no IntelliJ**:
+   - Vá em `File` > `New` > `Project from Existing Sources`.
+   - Navegue até o diretório do projeto clonado (`quizzer-app`) e selecione o arquivo `pom.xml` (se estiver usando Maven) ou o diretório raiz do projeto.
+
+4. **Configure o Artefato**:
+   - Vá para `File` > `Project Structure` > `Artifacts`.
+   - Clique em `+` e adicione um novo artefato `Web Application: Exploded` e configure o diretório de saída.
+   - Na aba de `Run/Debug Configurations`, selecione o artefato que você acabou de configurar para ser implantado no Tomcat.
+
+5. **Inicie o Servidor**:
+   - Selecione o servidor Tomcat configurado na lista de configurações de execução e clique em `Run`.
+   - O Tomcat será iniciado e você poderá acessar a aplicação em `http://localhost:8080/quizzer-app`.
+
+---
 
 ## Estrutura do Projeto
 
@@ -70,7 +99,7 @@ Siga os passos abaixo para rodar o QUIZZER APP no Tomcat:
 - **app.js**: Código JavaScript responsável pela lógica do questionário.
 - **questions.json**: Arquivo JSON contendo as perguntas e respostas.
 - **WEB-INF/web.xml**: Arquivo de configuração do Tomcat.
-  
+
   Exemplo de `web.xml`:
 
   ```xml
@@ -141,7 +170,7 @@ Para dúvidas ou sugestões, entre em contato através do e-mail: [pro.felipefei
 
 **QUIZZER APP** - 2024
 
----
+--- 
 
 ### Notas:
-- **Configuração de JSON via Servidor Tomcat**: Certifique-se de que o servidor Tomcat permite o acesso aos arquivos estáticos, como o `questions.json`.
+- **Deploy no Tomcat**: Certifique-se de que o Tomcat esteja corretamente configurado e que o projeto seja compatível com um servidor web Java.
