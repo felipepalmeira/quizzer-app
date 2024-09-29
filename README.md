@@ -35,7 +35,7 @@ O QUIZZER APP carrega perguntas e respostas a partir de um arquivo JSON e aprese
 2. **Navegue até o Diretório do Projeto**
 
    ```sh
-   cd quizz-app
+   cd quizzer-app
    ```
 
 ## Configuração do Servidor Tomcat no Eclipse
