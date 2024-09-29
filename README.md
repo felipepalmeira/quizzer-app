@@ -24,7 +24,7 @@ O QUIZZER APP carrega perguntas e respostas a partir de um arquivo JSON e aprese
    Clone o repositório para o seu ambiente local:
 
    ```sh
-   git clone https://github.com/seuusuario/quizzer-app.git
+   git clone https://github.com/felipepalmeira/quizzer-app.git
    ```
 
 2. **Navegue até o Diretório do Projeto**
