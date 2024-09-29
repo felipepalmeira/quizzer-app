@@ -33,7 +33,7 @@
         <div class="row justify-content-center">
             <div class="col-sm-8 col-md-6 col-lg-4">
                 <!-- Formulário -->
-                <form>
+                <form action="progress.html">
                     <div class="row">
                         <div class="col-12 mb-3">
                             <label for="nome" class="form-label visually-hidden">Nome</label>
@@ -52,13 +52,7 @@
                             <input type="password" class="form-control" id="senha" placeholder="Senha" required>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-12 mb-3">
-                            <label for="confirmar-senha" class="form-label visually-hidden">Confirmação de Senha</label>
-                            <input type="password" class="form-control" id="confirmar-senha"
-                                placeholder="Confirmação de senha" required>
-                        </div>
-                    </div>
+
                     <div class="row">
                         <div class="col-12">
                             <button type="submit" class="btn btn-primary w-100">Fazer login</button>
@@ -83,10 +77,10 @@
     <!-- Bootstrap 5.3.3 JS -->
     <script src="./js/bootstrap.bundle.min.js"></script>
     <script>
-        // Após 5 segundos, o modal desaparece
+        // Após 1 segundos, o modal desaparece
         setTimeout(function () {
             document.getElementById('initialModal').style.display = 'none';
-        }, 5000);
+        }, 1000);
     </script>
 </body>
 
