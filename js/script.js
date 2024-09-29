@@ -30,8 +30,8 @@ function showQuestion() {
     currentQuestion.options.forEach(option => {
         const li = document.createElement('li');
         li.textContent = option;
-        li.classList.add('option'); // Adiciona uma classe para estilização, se necessário
-        li.addEventListener('click', () => selectAnswer(option));
+        li.classList.add('option'); // Adiciona uma classe para estilização
+        li.addEventListener('click', () => selectAnswer(option, li));
         optionsElement.appendChild(li);
     });
 
@@ -39,25 +39,40 @@ function showQuestion() {
     updateProgress();
 }
 
-function selectAnswer(answer) {
+function selectAnswer(answer, selectedOptionElement) {
     const currentQuestion = questions[currentQuestionIndex];
+
+    // Desabilitar a interação com as opções após uma escolha
+    const options = document.querySelectorAll('.option');
+    options.forEach(option => {
+        option.style.pointerEvents = 'none'; // Desabilita os cliques
+    });
 
     // Verificar se a resposta está correta ou errada
     if (answer === currentQuestion.answer) {
-        correctAnswersCount++; // Incrementa o número de acertos
-        alert('Correto!');
+        correctAnswersCount++;
+        selectedOptionElement.style.backgroundColor = 'green'; // Muda a cor da opção correta para verde
     } else {
-        alert('Errado!');
+        selectedOptionElement.style.backgroundColor = 'red'; // Muda a cor da opção incorreta para vermelho
+
+        // Também destacar a resposta correta
+        options.forEach(option => {
+            if (option.textContent === currentQuestion.answer) {
+                option.style.backgroundColor = 'green'; // Destacar a resposta correta
+            }
+        });
     }
 
-    // Passar automaticamente para a próxima pergunta
-    currentQuestionIndex++;
+    // Espera 2 segundos antes de passar para a próxima pergunta
+    setTimeout(() => {
+        currentQuestionIndex++;
 
-    if (currentQuestionIndex < questions.length) {
-        showQuestion();  // Exibir a próxima pergunta
-    } else {
-        showResults();  // Exibir os resultados ao final do quiz
-    }
+        if (currentQuestionIndex < questions.length) {
+            showQuestion();  // Exibir a próxima pergunta
+        } else {
+            showResults();  // Exibir os resultados ao final do quiz
+        }
+    }, 2000);
 }
 
 function showResults() {
@@ -65,9 +80,7 @@ function showResults() {
     document.querySelector('.congrats-text').innerHTML = `
     <span style="font-size: 24px; font-weight: bold;">Parabéns!</span><br>
     <span style="font-size: 16px;">Você acertou ${correctAnswersCount} de ${questions.length} perguntas.</span>
-`;
-
-
+    `;
 
     // Exibir o modal
     document.getElementById('initialModal').style.display = 'flex'; // Exibe o modal ao final do quiz
