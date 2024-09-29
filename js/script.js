@@ -51,14 +51,16 @@ function selectAnswer(answer, selectedOptionElement) {
     // Verificar se a resposta está correta ou errada
     if (answer === currentQuestion.answer) {
         correctAnswersCount++;
-        selectedOptionElement.style.backgroundColor = 'green'; // Muda a cor da opção correta para verde
+        selectedOptionElement.style.backgroundColor = '#4364f7';
+        // Muda a cor da opção correta para verde
     } else {
-        selectedOptionElement.style.backgroundColor = 'red'; // Muda a cor da opção incorreta para vermelho
+        selectedOptionElement.style.backgroundColor = 'red-light'; // Muda a cor da opção incorreta para vermelho
 
         // Também destacar a resposta correta
         options.forEach(option => {
             if (option.textContent === currentQuestion.answer) {
-                option.style.backgroundColor = 'green'; // Destacar a resposta correta
+                option.style.backgroundColor = '#4364f7';
+                option.style.color = 'white'; // Destacar a resposta correta
             }
         });
     }
