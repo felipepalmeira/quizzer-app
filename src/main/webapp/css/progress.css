@@ -1,0 +1,48 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f8f9fa;
+  padding: 20px;
+}
+
+.card-custom {
+  border-radius: 15px;
+  padding: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.progress-custom {
+  height: 8px;
+  border-radius: 5px;
+}
+
+.icon {
+  font-size: 1.5rem;
+  margin-right: 10px;
+}
+
+.bottom-nav {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #f1f1f1;
+  padding: 10px;
+  display: flex;
+  justify-content: space-evenly;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  box-shadow: 0px -1px 10px rgba(0, 0, 0, 0.1);
+}
+
+.bottom-nav i {
+  font-size: 1.5rem;
+}
+
+.btn-main {
+  background-color: #4364f7;
+  color: white;
+  margin-top: -30px;
+  padding: 9px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
