@@ -1,0 +1,156 @@
+.progress-bar-container {
+    background-color: #e9ecef;
+    border-radius: 10px;
+    height: 6px;
+    width: 100%;
+    margin: 0 1rem;
+}
+
+.progress-bar {
+    background-color: #4364f7;
+    height: 6px;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.option {
+    background-color: #fff;
+    border: 2px solid #6c757d;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.option:hover {
+    background-color: #e2e2e2;
+}
+
+.option.correct {
+    background-color: #4364f7;
+    color: #fff;
+    border-color: #4364f7;
+}
+
+.nav-btn {
+    background-color: transparent;
+    border: none;
+    color: #4364f7;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.nav-btn:hover {
+    color: #304190;
+}
+
+.question-container {
+    text-align: center;
+}
+
+#initialModal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1050;
+
+}
+
+.bg-custom {
+    background: linear-gradient(to bottom, #4364f7, #304190);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+
+.trophy-icon {
+    font-size: 5rem;
+    margin-bottom: 20px;
+}
+
+.congrats-text {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+
+.btn-custom {
+    font-size: 1.2rem;
+    width: 200px;
+    padding: 10px;
+}
+
+.btn-outline-custom {
+    background-color: white;
+    color: #4364f7;
+    border-color: white;
+}
+
+.btn-outline-custom:hover {
+    background-color: #f1f1f1;
+    color: #4364f7;
+}
+
+.quiz-footer {
+    position: fixed;
+    bottom: 0.5rem;
+    left: 0.7rem;
+    width: 100%;
+
+    /* padding: 10px; */
+
+    /* Opcional: adiciona uma sombra sutil */
+    z-index: 1000;
+    /* Certifique-se de que o footer fique acima de outros elementos */
+}
+
+.nav-btn {
+    background-color: transparent;
+    border: none;
+    color: #4364f7;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.nav-btn:hover {
+    color: #304190;
+}
+
+
+/* Estilos customizados para até 540px */
+@media (max-width: 540px) {
+    .progress-bar-container {
+        margin: 0;
+    }
+
+    .quiz-header .quiz-progress {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .quiz-header .progress-bar-container {
+        margin: 10px 0;
+    }
+
+    .quiz-header .fas {
+        margin-top: 10px;
+        font-size: 1.2rem;
+    }
+
+    .quiz-footer {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 1rem;
+
+    }
+}
